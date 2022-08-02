@@ -30,7 +30,7 @@ export default function About({
         <input type="text" value={text} onChange={handleChange} />
         <button onClick={handleAdd}>追加</button>
         <ul>
-          {array.map((item) => {
+          {array?.map((item) => {
             return <li key={item}>{item}</li>;
           })}
         </ul>
