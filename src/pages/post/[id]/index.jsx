@@ -19,4 +19,4 @@ const PostId = () => {
   );
 };
 
-export default Home;
+export default PostId;
