@@ -11,7 +11,7 @@ const Home = (props) => {
 
   const getPosts = useCallback(async () => {
     try {
-      const res = await fetch("https://jsonplaceholder.typicode.com/postsl");
+      const res = await fetch("https://jsonplaceholder.typicode.com/posts");
       if (!res.ok) {
         throw new Error("エラーが発生したため、データが取得に失敗しました。");
       }
