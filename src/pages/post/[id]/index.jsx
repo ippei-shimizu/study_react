@@ -1,10 +1,10 @@
 import Head from "next/head";
 import styles from "src/styles/Home.module.css";
 import { Header } from "src/components/Header";
-import { useCallback, useEffect, useState } from "react";
-import { Posts } from "src/components/Posts";
+import { useRouter } from "next/router";
 
-const Home = (props) => {
+const PostId = () => {
+  const router = useRouter();
 
   return (
     <div className={styles.container}>
@@ -14,7 +14,7 @@ const Home = (props) => {
       </Head>
       <Header />
 
-      <Posts />
+      <div>{router.query.id}</div>
     </div>
   );
 };
