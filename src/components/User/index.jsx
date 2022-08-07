@@ -3,7 +3,7 @@ import { useUser } from "src/hooks/useUser";
 import styles from "src/components/User/User.module.css";
 
 export const User = () => {
-  const { post, user, error, isLoading } = useUser();
+  const { user, error, isLoading } = useUser();
 
   if (isLoading) {
     return <div>ローディング中です</div>;
