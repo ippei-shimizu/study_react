@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useUsers } from "src/hooks/useUsers";
+import { useUsers } from "src/hooks/useFetchArray";
 
 export const Users = () => {
   const { data, error, isLoading, isEmpty } = useUsers();
@@ -13,7 +13,6 @@ export const Users = () => {
   if (isEmpty) {
     return <div>データは空です。</div>;
   }
-
   return (
     <ol>
       {data.map((user) => {
