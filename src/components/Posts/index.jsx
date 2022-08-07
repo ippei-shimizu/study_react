@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { usePosts } from "src/hooks/usePosts";
+import styles from "../../styles/Home.module.css";
 
 export const Posts = () => {
   const { data, error, isLoading, isEmpty } = usePosts();
@@ -15,7 +16,7 @@ export const Posts = () => {
   }
 
   return (
-    <ol>
+    <ol className={styles.postContainer}>
       {data.map((post) => {
         return <li key={post.id}>
           <Link href={`/posts/${post.id}`}>
