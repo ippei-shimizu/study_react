@@ -30,7 +30,6 @@ export const User = () => {
       </ul>
       <h2>投稿記事</h2>
       <PostsByUserId id={user.id} />
-      <h2>コメント</h2>
     </div>
   );
 };
