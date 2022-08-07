@@ -1,3 +1,6 @@
 .list li {
   list-style: none;
 }
+.userContainer {
+  text-align: center;
+}
