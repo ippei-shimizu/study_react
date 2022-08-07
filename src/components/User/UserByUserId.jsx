@@ -14,7 +14,7 @@ export const UserByUserId = (props) => {
   }
   return (
     <div>
-      Created by{data?.name}
+      Created by{data?.name}{""}
       {data?.company.catchPhrase}
     </div>
   );
