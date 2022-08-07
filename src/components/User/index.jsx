@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { useUser } from "src/hooks/useUser";
-import styles from "src/components/User/User.module.css";
 import { PostsByUserId } from "src/components/Post/PostsByUserId";
 
 export const User = () => {
@@ -22,7 +21,7 @@ export const User = () => {
       <p>{user?.username}</p>
       <h2>ユーザーの詳細</h2>
       {user?.email ? <div>email : {user?.email}</div> : null}
-      <ul className={styles.list}>
+      <ul>
         {user?.address ? <li>address : {user?.address.street}</li> : null}
         {user?.address ? <li>suite : {user?.address.suite}</li> : null}
         {user?.address ? <li>city : {user?.address.city}</li> : null}
