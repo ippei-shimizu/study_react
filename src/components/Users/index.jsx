@@ -14,16 +14,19 @@ export const Users = () => {
     return <div>データは空です。</div>;
   }
   return (
-    <ol>
+    <ul className="grid grid-cols-2 gap-6">
       {data.map((user) => {
         return (
           <li key={user.id}>
             <Link href={`users/${user.id}`}>
-              <a>{user.name}</a>
+              <a className="block p-4 shadow rounded hover:bg-gray-100">
+                <h2 className="text-xl font-bold truncate">{user.name}</h2>
+                <p className="text-lg truncate">{user.email}</p>
+              </a>
             </Link>
           </li>
         );
       })}
-    </ol>
+    </ul>
   );
 };

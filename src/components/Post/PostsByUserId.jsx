@@ -13,16 +13,24 @@ export const PostsByUserId = (props) => {
     return <div>データは空です。</div>;
   }
   return (
-    <ol>
+    <ul className="space-y-4">
       {data.map((userId) => {
         return (
           <li key={userId.id}>
             <Link href={`/posts/${userId.id}`}>
-              <a>{userId.title}</a>
+              <a className="group">
+                {" "}
+                <h1 className="font-bold group-hover:text-blue-400">
+                  {userId.title}
+                </h1>
+                <p className="text-sm text-gray-500 group-hover:text-blue-300">
+                  {userId.body}
+                </p>
+              </a>
             </Link>
           </li>
         );
       })}
-    </ol>
+    </ul>
   );
 };
