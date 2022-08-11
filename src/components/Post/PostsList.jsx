@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { usePosts } from "src/hooks/useFetchArray";
+import { useFetchArray } from "src/hooks/useFetchArray";
+import { API_URL } from "src/utils/const";
 
-export const Posts = () => {
-  const { data, error, isLoading, isEmpty } = usePosts();
+export const PostList = () => {
+  const { data, error, isLoading, isEmpty } = useFetchArray(`${API_URL}/posts`);
 
   if (isLoading) {
     return <div>ローディング中です</div>;
@@ -20,8 +21,12 @@ export const Posts = () => {
           <li key={post.id}>
             <Link href={`/posts/${post.id}`}>
               <a className="group">
-                <h1 className="font-bold group-hover:text-blue-400">{post.title}</h1>
-                <p className="text-sm text-gray-500 group-hover:text-blue-300">{post.body}</p>
+                <h1 className="font-bold group-hover:text-blue-400">
+                  {post.title}
+                </h1>
+                <p className="text-sm text-gray-500 group-hover:text-blue-300">
+                  {post.body}
+                </p>
               </a>
             </Link>
           </li>

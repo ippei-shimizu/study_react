@@ -1,7 +1,7 @@
 import "src/styles/globals.css";
 import Head from "next/head";
-import { Layout } from "src/components/Layout";
 import { SWRConfig } from "swr";
+import { AppLayout } from "src/layouts/AppLayout/AppLayout";
 
 const fetcher = async (...args) => {
   const response = await fetch(...args);
@@ -16,9 +16,9 @@ const MyApp = ({ Component, pageProps }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SWRConfig value={{ fetcher }}>
-        <Layout>
+        <AppLayout>
           <Component {...pageProps} />
-        </Layout>
+        </AppLayout>
       </SWRConfig>
     </>
   );
